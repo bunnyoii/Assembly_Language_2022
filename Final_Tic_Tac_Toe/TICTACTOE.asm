@@ -35,6 +35,17 @@ printChar PROC
     ret
 printChar ENDP
 
+printCharCOLOR PROC
+    push cx            ; 保存 CX 寄存器的值
+    mov ah, 09h        ; BIOS 设置文本颜色
+    mov cx, 1          ; 重复计数
+    int 10h
+    mov ah, 02h        ; DOS 打印字符服务
+    int 21h
+    pop cx             ; 恢复 CX 寄存器的值
+    ret
+printCharCOLOR ENDP
+
 ; 打印新行子程序
 newLine PROC
     mov dl, 0dh        ; 回车符
