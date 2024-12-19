@@ -57,7 +57,7 @@ printString ENDP
 ```
 这个子程序通过调用 `int 21h` 中断，使用 `ah = 09h` 来打印以 `$` 结尾的字符串。在字符串中每遇到 `$` 字符，打印服务就会停止。
 
-### 打印单个字符
+#### 打印单个字符
 
 ```asm
 printChar PROC
@@ -70,7 +70,7 @@ printChar ENDP
 ```
 这个子程序通过 `ah = 02h` 调用 `DOS` 中断来打印一个字符。字符通过 `dl` 寄存器传入。
 
-### 打印新行
+#### 打印新行
 
 ```asm
 newLine PROC
@@ -198,7 +198,7 @@ endCheckDiagonal:
     ret
 checkDiagonal ENDP
 ```
-`checkDiagonal` 检查两条对角线（从左上到右下和从右上到左下）是否有相同符号（玩家标记相同）。ccsx2
+`checkDiagonal` 检查两条对角线（从左上到右下和从右上到左下）是否有相同符号（玩家标记相同）。
 
 行和列的检查使用类似的方法，比较每一行和每一列的三个格子是否都是相同字符。如果相同，则设定 `win = 1`，表示胜利者已经产生。
 
@@ -243,21 +243,21 @@ MAIN ENDP
 
 # 项目实现
 
-1. 初始界面
+## 初始界面
 
-    ![](../Final_Tic_Tac_Toe/src/1.png)
+![](../Final_Tic_Tac_Toe/src/1.png)
 
-2. 玩家下棋
+## 玩家下棋
 
-    ![](../Final_Tic_Tac_Toe/src/2.png)
+![](../Final_Tic_Tac_Toe/src/2.png)
 
-3. 有玩家获胜
+## 有玩家获胜
 
-    ![](../Final_Tic_Tac_Toe/src/3.png)
+![](../Final_Tic_Tac_Toe/src/3.png)
 
-4. 平局
+## 平局
 
-    ![](../Final_Tic_Tac_Toe/src/4.png)
+![](../Final_Tic_Tac_Toe/src/4.png)
 
 # 反思与总结
 
